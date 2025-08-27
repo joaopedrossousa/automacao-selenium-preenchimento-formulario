@@ -33,6 +33,11 @@ class PreencherFormulario:
         self.campo_selecionado.send_keys(f"{info_campo}")
 
     def centralizar_campo(self):
+        campo = self.campo_selecionado
         self.browser.execute_script(
-            "arguments[0].scrollIntoView({block: 'center'})", self.select_campo
+            "arguments[0].scrollIntoView({block: 'center'})", campo
         )
+
+    def clicar_campo(self):
+        campo = self.campo_selecionado
+        campo.click()
